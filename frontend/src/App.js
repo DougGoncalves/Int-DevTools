@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Container, Row, Col} from 'reactstrap'
+import Form from '../src/components/Form'
+import List from '../src/components/List'
+import Map from '../src/components/Map'
+import {DroneContextProvider} from '../src/utils/Context'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default ()=>{
+  return(
+    <DroneContextProvider>
+      <Container>
+            <Row className="justify-content-center">
+                <Col md="12">
+                  <h1><strong>Rastreamento de Drones</strong></h1>
+                  <hr className="hr"/>
+                </Col>
+                <Form/>
+                <List/>
+                <Map/>
+            </Row>
+      </Container>
+    </DroneContextProvider>  
+  )
 }
-
-export default App;

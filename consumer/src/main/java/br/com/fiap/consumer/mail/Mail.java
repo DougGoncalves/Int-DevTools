@@ -35,7 +35,7 @@ public class Mail {
 		try {
 
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("ddronefiap@gmail.com"));
+			message.setFrom(new InternetAddress("drone36scjgmail.com"));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("doug.goncalvesf@gmail.com"));//trocar este e-mail para um de sua configuração
 			message.setSubject("Alerta Drone Sensor");
 			message.setText("Dados coletados que batem com o filtro:" + "\n\n ID Drone: " + drone.getId()
@@ -44,7 +44,7 @@ public class Mail {
 
 			Transport.send(message);
 
-			System.out.println("E-mail evniado com sucesso!");
+			System.out.println("E-mail enviado com sucesso!");
 
 		} catch (MessagingException e) {
 			e.printStackTrace();

@@ -8,7 +8,7 @@ import br.com.fiap.consumer.dto.DroneDTO;
 
 public class Consumer {
   
-  public static void mains(String[] args) throws InterruptedException{
+  public static void main(String[] args) throws InterruptedException{
 
     while(true) {
       List<String> messages = new ConsumerMail().getMessages();

@@ -1,0 +1,56 @@
+import React, { useContext } from 'react'
+import { DroneContext } from '../../utils/Context'
+import { Col, Table, Alert } from 'reactstrap'
+
+export default () => {
+  const [state] = useContext(DroneContext);
+  const length = state.drones.length;
+  const rows = state.drones.map((drone, index) =>
+    <tr key={index}>
+      <td>{drone.idDrone}</td>
+      <td>{drone.latitude}</td>
+      <td>{drone.longitude}</td>
+      <td>{drone.temperatura}</td>
+      <td>{drone.umidade} </td>
+      <td>{formatRastreamento(drone)}</td>
+    </tr>
+  )
+  if (length > 0) {
+    return (
+      <Col md="8">
+        <h3>Onde seu drone está ?</h3>
+        <Table striped>
+          <thead>
+            <tr>
+              <td>Id Drone</td>
+              <td>Latitude</td>
+              <td>Longitude</td>
+              <td>Temperatura Ar</td>
+              <td>Umidade Ar</td>
+              <td>Rastreamento</td>
+            </tr>
+          </thead>
+          <tbody>
+            {rows}
+          </tbody>
+        </Table>
+
+      </Col>
+    )
+  } else {
+    return (
+      <Col md="8">
+        <h3>Drones Rastreados</h3>
+        <Alert color="info">Nenhum drone rastreado no momento.</Alert>
+      </Col>
+    )
+  }
+}
+
+function formatRastreamento(drone) {
+  if (drone.rastreamento) {
+    return <a rel="noopener noreferrer" target="_blank" href={`https://www.google.com/maps/search/?api=1&query=${drone.latitude},${drone.longitude}`}>Ver</a>
+  } else {
+    return "-";
+  }
+}
