@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { DroneContext } from '../../utils/Context'
 import { Col, Table, Alert } from 'reactstrap'
+import '../List/list.css'
 
 export default () => {
   const [state] = useContext(DroneContext);
@@ -10,16 +11,16 @@ export default () => {
       <td>{drone.idDrone}</td>
       <td>{drone.latitude}</td>
       <td>{drone.longitude}</td>
-      <td>{drone.temperatura}</td>
-      <td>{drone.umidade} </td>
+      <td>{drone.temperatura}°C</td>
+      <td>{drone.umidade}%</td>
       <td>{formatRastreamento(drone)}</td>
     </tr>
   )
   if (length > 0) {
     return (
       <Col md="8">
-        <h3>Onde seu drone está ?</h3>
-        <Table striped>
+        <h3 className="where">Onde seu drone está ?</h3>
+        <Table dark hover>
           <thead>
             <tr>
               <td>Id Drone</td>
@@ -40,8 +41,8 @@ export default () => {
   } else {
     return (
       <Col md="8">
-        <h3>Drones Rastreados</h3>
-        <Alert color="info">Nenhum drone rastreado no momento.</Alert>
+        <h3 className="where">Drones Rastreados</h3>
+        <Alert color="warning">Nenhum drone rastreado no momento.</Alert>
       </Col>
     )
   }

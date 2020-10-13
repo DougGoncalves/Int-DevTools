@@ -19,7 +19,7 @@ public class Consumer {
             DroneDTO droneDTO = new DroneDTO(message);
 
             if (droneDTO.EnviaMail()) {
-              new Mail().EnviarMail(droneDTO);
+              new Mail().EnviaMail(droneDTO);
               break;
             }
           }

@@ -3,12 +3,16 @@
   margin-top: 5rem;
 }
 
+.title{
+  margin-left: 30%;
+}
+
 .hr {
   margin-bottom: 2rem;
 }
 
 .form {
   padding: 1rem;
-  background-color: #efefef;
+  background-color:rgba(66,67,67,0.8);
   border-radius: 1rem;
 }

@@ -15,14 +15,14 @@ import br.com.fiap.consumer.dto.DroneDTO;
 
 public class Mail {
   
-  public void EnviarMail(DroneDTO drone) {
+  public void EnviaMail(DroneDTO drone) {
 
-		final String username = "drone36scjgmail.com";
+		final String username = "drone36scj@gmail.com";
 		final String password = "@123@456";
 
 		Properties prop = new Properties();
 		prop.put("mail.smtp.host", "smtp.gmail.com");
-		prop.put("mail.smtp.port", "587");
+		prop.put("mail.smtp.port", "587"); //Para SSL usar 465
 		prop.put("mail.smtp.auth", "true");
 		prop.put("mail.smtp.starttls.enable", "true"); // TLS
 
@@ -35,10 +35,10 @@ public class Mail {
 		try {
 
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("drone36scjgmail.com"));
+			message.setFrom(new InternetAddress("drone36scj@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("doug.goncalvesf@gmail.com"));//trocar este e-mail para um de sua configuração
-			message.setSubject("Alerta Drone Sensor");
-			message.setText("Dados coletados que batem com o filtro:" + "\n\n ID Drone: " + drone.getId()
+			message.setSubject("Alerta - Seu Drone precisa de sua atenção!");
+			message.setText("Dados coletados:" + "\n\n ID Drone: " + drone.getId()
 					+ "\n Latitude: " + drone.getLatitude() + "\n Longitude" + drone.getLongitude() + "\n Temperatura: "
 					+ drone.getTemperatura() + "\n Umidade do Ar: " + drone.getUmidade());
 

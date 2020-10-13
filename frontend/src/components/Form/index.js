@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { DroneContext } from '../../utils/Context'
 import { Col, Form, FormGroup, Label, Input, CustomInput, Button } from 'reactstrap'
+import '../Form/form.css'
 
 export default () => {
     const idDrone = useFormInput("")
@@ -51,34 +52,34 @@ export default () => {
 
     return (
         <Col className="form" md="4">
-            <h3>Adicionar rastreamento</h3>
+            <h3 id="add">Adicionar rastreamento</h3>
             <Form onSubmit={onSubmit}>
                 <FormGroup>
-                    <Label>ID Drone:</Label>
+                    <Label className="label">ID Drone:</Label>
 
                     <Input {...idDrone} type="text" name="idDrone" required autoFocus />
                 </FormGroup>
                 <FormGroup>
-                    <Label>Latitude:</Label>
+                    <Label className="label">Latitude:</Label>
                     <Input {...latitude} type="text" name="latitude" required />
                 </FormGroup>
                 <FormGroup>
-                    <Label>Longitude:</Label>
+                    <Label className="label">Longitude:</Label>
                     <Input {...longitude} type="text" name="longitude" required />
                 </FormGroup>
                 <FormGroup>
-                    <Label>Temperatura do Ar:</Label>
+                    <Label className="label">Temperatura do Ar:</Label>
                     <Input {...temperatura} type="text" name="temperatura" required />
                 </FormGroup>
                 <FormGroup>
-                    <Label>Umidade do Ar:</Label>
+                    <Label className="label">Umidade do Ar:</Label>
                     <Input {...umidade} type="text" name="umidade" required />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="exampleCheckbox">Ativar Rastreamento?</Label>
-                    <div>
+                    <Label for="exampleCheckbox" className="ativar">Ativar Rastreamento?</Label>
+                    <div className="switch">
                         <CustomInput {...rastreamento} type="switch" id="rastreamento" name="rastreamento" 
-                        value="true"/>
+                        value="true" className="switch"/>
                     </div>
                 </FormGroup>
 
