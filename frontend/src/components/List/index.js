@@ -11,8 +11,8 @@ export default () => {
       <td>{drone.idDrone}</td>
       <td>{drone.latitude}</td>
       <td>{drone.longitude}</td>
-      <td>{drone.temperatura}°C</td>
-      <td>{drone.umidade}%</td>
+      <td>{drone.temperaturaAr}°C</td>
+      <td>{drone.umidadeAr}%</td>
       <td>{formatRastreamento(drone)}</td>
     </tr>
   )

@@ -5,8 +5,8 @@ public class DroneDTO {
   private Long id;
   private String latitude;
   private String longitude;
-  private int temperatura;
-  private int umidade;
+  private int temperaturaAr;
+  private int umidadeAr;
 
 
   public DroneDTO(String message){
@@ -15,8 +15,8 @@ public class DroneDTO {
     this.id = Long.parseLong(fields[0]);
     this.latitude = fields[1];
     this.longitude = fields[2];
-    this.temperatura = Integer.parseInt(fields[3]);
-    this.umidade = Integer.parseInt(fields[4]);
+    this.temperaturaAr = Integer.parseInt(fields[3]);
+    this.umidadeAr = Integer.parseInt(fields[4]);
   }
 
 
@@ -44,24 +44,24 @@ public class DroneDTO {
     this.longitude = longitude;
   }
 
-  public int getTemperatura() {
-    return this.temperatura;
+  public int getTemperaturaAr() {
+    return this.temperaturaAr;
   }
 
-  public void setTemperatura(int temperatura) {
-    this.temperatura = temperatura;
+  public void setTemperaturaAr(int temperaturaAr) {
+    this.temperaturaAr = temperaturaAr;
   }
 
-  public int getUmidade() {
-    return this.umidade;
+  public int getUmidadeAr() {
+    return this.umidadeAr;
   }
 
-  public void setUmidade(int umidade) {
-    this.umidade = umidade;
+  public void setUmidadeAr(int umidadeAr) {
+    this.umidadeAr = umidadeAr;
   }
 
   public boolean EnviaMail() {
-		if ((this.temperatura >= 35 || this.getTemperatura() <= 0) || (this.getUmidade() <= 15)) {
+		if ((this.temperaturaAr >= 35 || this.getTemperaturaAr() <= 0) || (this.getUmidadeAr() <= 15)) {
 			return true;
 		}
 		return false;

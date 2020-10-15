@@ -15,7 +15,7 @@ import br.com.fiap.consumer.dto.DroneDTO;
 
 public class Mail {
   
-  public void EnviaMail(DroneDTO drone) {
+  public void EnviaMailTLS(DroneDTO drone) {
 
 		final String username = "drone36scj@gmail.com";
 		final String password = "@123@456";
@@ -40,7 +40,7 @@ public class Mail {
 			message.setSubject("Alerta - Seu Drone precisa de sua atenção!");
 			message.setText("Dados coletados:" + "\n\n ID Drone: " + drone.getId()
 					+ "\n Latitude: " + drone.getLatitude() + "\n Longitude" + drone.getLongitude() + "\n Temperatura: "
-					+ drone.getTemperatura() + "\n Umidade do Ar: " + drone.getUmidade());
+					+ drone.getTemperaturaAr() + "°C" + "\n Umidade do Ar: " + drone.getUmidadeAr() + "%") ;
 
 			Transport.send(message);
 

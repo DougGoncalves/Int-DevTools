@@ -5,8 +5,8 @@ public class DadosDrone {
   private int idDrone;
   private String latitude;
   private String longitude;
-  private int temperatura;
-  private int umidade;
+  private int temperaturaAr;
+  private int umidadeAr;
   private boolean rastreamento;
 
   public int getIdDrone() {
@@ -33,20 +33,20 @@ public class DadosDrone {
     this.longitude = longitude;
   }
 
-  public int getTemperatura() {
-    return this.temperatura;
+  public int getTemperaturaAr() {
+    return this.temperaturaAr;
   }
 
-  public void setTemperatura(int temperatura) {
-    this.temperatura = temperatura;
+  public void setTemperaturaAr(int temperaturaAr) {
+    this.temperaturaAr = temperaturaAr;
   }
 
-  public int getUmidade() {
-    return this.umidade;
+  public int getUmidadeAr() {
+    return this.umidadeAr;
   }
 
-  public void setUmidade(int umidade) {
-    this.umidade = umidade;
+  public void setUmidadeAr(int umidadeAr) {
+    this.umidadeAr= umidadeAr;
   }
 
   public boolean isRastreamento() {
@@ -61,12 +61,12 @@ public class DadosDrone {
     this.rastreamento = rastreamento;
   }
 
-  public DadosDrone(int idDrone, String latitude, String longitude, int temperatura, int umidade, boolean rastreamento) {
+  public DadosDrone(int idDrone, String latitude, String longitude, int temperaturaAr, int umidadeAr, boolean rastreamento) {
     this.idDrone = idDrone;
     this.latitude = latitude;
     this.longitude = longitude;
-    this.temperatura = temperatura;
-    this.umidade = umidade;
+    this.temperaturaAr = temperaturaAr;
+    this.umidadeAr = umidadeAr;
     this.rastreamento = rastreamento;
   }
 

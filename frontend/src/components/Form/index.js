@@ -7,8 +7,8 @@ export default () => {
     const idDrone = useFormInput("")
     const latitude = useFormInput("")
     const longitude = useFormInput("")
-    const temperatura = useFormInput("")
-    const umidade = useFormInput("")
+    const temperaturaAr = useFormInput("")
+    const umidadeAr = useFormInput("")
     const rastreamento = useFormInputChecked("")
     const [state, dispatch] = useContext(DroneContext);
 
@@ -16,11 +16,11 @@ export default () => {
         fetch('http://127.0.0.1:8080/drones', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            mode: 'no-cors',
+            // mode: 'no-cors',
             body: JSON.stringify(data)
         })
             .then(response => {
-                console.log("Dados salvos com sucesso!");
+                console.log("Dados salvos com sucesso");
             }); 
     }
 
@@ -30,7 +30,7 @@ export default () => {
         
         const data = {
             idDrone: idDrone.value, latitude: latitude.value, longitude: longitude.value,
-            temperatura: temperatura.value, umidade: umidade.value, rastreamento: rastreamento.value
+            temperaturaAr: temperaturaAr.value, umidadeAr: umidadeAr.value, rastreamento: rastreamento.value
         }
 
         event.preventDefault()
@@ -41,8 +41,8 @@ export default () => {
         request(data);
 
         interval = setInterval(() => {
-            data.temperatura = Math.floor((Math.random() * 40) + 1);
-            data.umidade = Math.floor((Math.random() * 100) + 1);
+            data.temperaturaAr = Math.floor((Math.random() * 40) + 1);
+            data.umidadeAr = Math.floor((Math.random() * 100) + 1);
             request(data);
         }, 10000);
 
@@ -69,11 +69,11 @@ export default () => {
                 </FormGroup>
                 <FormGroup>
                     <Label className="label">Temperatura do Ar:</Label>
-                    <Input {...temperatura} type="text" name="temperatura" required />
+                    <Input {...temperaturaAr} type="text" name="temperatura" required />
                 </FormGroup>
                 <FormGroup>
                     <Label className="label">Umidade do Ar:</Label>
-                    <Input {...umidade} type="text" name="umidade" required />
+                    <Input {...umidadeAr} type="text" name="umidade" required />
                 </FormGroup>
                 <FormGroup>
                     <Label for="exampleCheckbox" className="ativar">Ativar Rastreamento?</Label>
