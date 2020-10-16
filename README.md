@@ -5,8 +5,14 @@
    <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
    <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
    <a href="#-topologia">Topologia</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-   <a href="#-executar">Como executar ?</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#-executar">Como executar ?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  </p>
+
+## Topologia
+
+ <p align="center">
+  <img alt="topologia" src=".github/topologia.png" width="100%">
+</p>
 
  ## :rocket: Tecnologias
 
@@ -16,11 +22,6 @@
 
  Projeto referente a disciplina de Integration & Development Tools, do MBA da [FIAP](https://www.fiap.com.br/mba/mba-em-full-stack-developer-microservices-cloud-e-iot/). Foi desenvolvida uma solução para o agronegócio que coleta dados via sensores de temperatura e umidade. Esses sensores ficarão instalados em um drone com uma altíssima autonomia de energia, pois conta com pequenos, porém muito eficientes painéis fotovoltaicos.
  A cada 10 segundos são enviados para o message broker os dados de temperatura e umidade capturado naquele instante. Você pode ver um exemplo em vídeo do funcionamento dessas features nesse [link](https://vimeo.com/469054093 )
-
- ## Topologia
- <p align="center">
-  <img alt="topologia" src=".github/topologia.png" width="100%">
-</p>
 
  ## Como executar ?
 
