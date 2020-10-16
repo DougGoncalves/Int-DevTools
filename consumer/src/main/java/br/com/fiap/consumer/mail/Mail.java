@@ -36,7 +36,7 @@ public class Mail {
 
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress("drone36scj@gmail.com"));
-			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("doug.goncalvesf@gmail.com"));//trocar este e-mail para um de sua configuração
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("drone36scj@outlook.com"));//trocar este e-mail para um de sua configuração
 			message.setSubject("Alerta - Seu Drone precisa de sua atenção!");
 			message.setText("Dados coletados:" + "\n\n ID Drone: " + drone.getId()
 					+ "\n Latitude: " + drone.getLatitude() + "\n Longitude" + drone.getLongitude() + "\n Temperatura: "
